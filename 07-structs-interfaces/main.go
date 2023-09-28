@@ -5,10 +5,47 @@ import (
 	"fmt"
 
 	"github.com/JoseGaldamez/go_introduction_course/07-structs-interfaces/structs"
+	vehicleinterfaces "github.com/JoseGaldamez/go_introduction_course/07-structs-interfaces/vehicle-interfaces"
 )
 
 func main() {
+	fmt.Println("============= Structs =============")
 
+	callFunctionsExamples()
+
+	fmt.Println("============= Interfaces =============")
+	fmt.Println()
+
+	carV := vehicleinterfaces.Car{Time: 120}
+	fmt.Println(carV.Distance())
+
+	fmt.Println()
+
+	vArray := []string{"CAR", "MOTORCYCLE", "TRUCK"}
+	time := 400
+	var totalDistance float64
+	for _, vehicleName := range vArray {
+		vehicle, err := vehicleinterfaces.New(vehicleName, time)
+		if err != nil {
+			fmt.Println("Error: ", err)
+			fmt.Println()
+			continue
+		}
+
+		vehicleDistance := vehicle.Distance()
+		fmt.Printf("Vehicle: %s recorre %.2f kilometros en %d tiempo.", vehicleName, vehicleDistance, time)
+		fmt.Println()
+
+		totalDistance += vehicleDistance
+	}
+
+	fmt.Println()
+	fmt.Printf("El total recorrido es: %.2f", totalDistance)
+	fmt.Println()
+
+}
+
+func callFunctionsExamples() {
 	var product1 structs.Product
 	product1.ID = 12
 	product1.Name = "test"
@@ -102,6 +139,6 @@ func main() {
 	car1.AddProducts(p1, p2)
 
 	fmt.Println(car1)
-	fmt.Println(car1.Total())
+	fmt.Printf("Total del carrito $%.2f\n", car1.Total())
 
 }
