@@ -1,0 +1,6 @@
+Logger file: 2023/09/28 17:34:31 main.go:24: test 01
+Logger file: 2023/09/28 17:34:31 main.go:25: test 02
+Logger file: 2023/09/28 17:34:31 main.go:26: test 03
+error: 2023/09/28 17:34:31 main.go:31: test 04
+error: 2023/09/28 17:34:31 main.go:32: test 05
+error: 2023/09/28 17:34:31 main.go:33: test 06
