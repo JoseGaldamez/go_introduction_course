@@ -55,7 +55,7 @@ func callFunctionsExamples() {
 	fmt.Println(product2)
 
 	// Esta forma no es recomendada ya que requiere enviar a ciegas todos los valores
-	product3 := structs.Product{2, "Test", structs.Type{}, 1, 12.21, nil}
+	product3 := structs.Product{ID: 2, Name: "Test", Type: structs.Type{}, Count: 1, Price: 12.21, Tags: nil}
 	fmt.Println(product3)
 
 	// Esta forma es un poco más recomenda
